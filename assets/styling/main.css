@@ -1,0 +1,131 @@
+body {
+    background-color: #0f1116;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px;
+}
+
+#title {
+    font-size: 2.4em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0 0 28px 0;
+    background: linear-gradient(90deg, #ffa200, #eeff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#description {
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin: 0 0 28px 0;
+    color: #cccccc;
+}
+
+#hero {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#file-browse {
+    width: 400px;
+    text-align: left;
+    font-size: x-large;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #181b22;
+    border: 1px solid #2a2d36;
+    border-radius: 10px;
+    padding: 28px 32px;
+}
+
+#file-browse a {
+    color: white;
+    text-decoration: none;
+    border: white 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#file-browse a:hover {
+    background-color: #1f1f1f;
+    cursor: pointer;
+}
+
+#file-browse button {
+    background-color: #23272f;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#file-browse button:hover {
+    background-color: #2e3340;
+    border-color: #888;
+}
+
+#file-browse #geotag-button {
+    background-color: #2d6a4f;
+    color: #e0f5ec;
+    border: none;
+    font-weight: 600;
+    font-size: 14px !important;
+    letter-spacing: 0.03em;
+    margin-top: 8px;
+    padding: 7px 14px !important;
+    align-self: center;
+}
+
+#file-browse #geotag-button:hover:not(:disabled) {
+    background-color: #3a8a65;
+    border: none;
+}
+
+#file-browse #geotag-button:disabled {
+    background: #2a2d36 !important;
+    color: #555 !important;
+    cursor: not-allowed;
+}
+
+#links {
+    width: 400px;
+    text-align: left;
+    font-size: x-large;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#links a {
+    color: white;
+    text-decoration: none;
+    margin-top: 20px;
+    margin: 10px 0px;
+    border: white 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#links a:hover {
+    background-color: #1f1f1f;
+    cursor: pointer;
+}
+
+#header {
+    max-width: 1200px;
+}
