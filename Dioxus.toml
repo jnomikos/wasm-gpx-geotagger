@@ -5,6 +5,8 @@
 # HTML title tag content
 title = "geotagger"
 
+base_path = "wasm-gpx-geotagger"
+
 # include `assets` in web platform
 [web.resource]
 

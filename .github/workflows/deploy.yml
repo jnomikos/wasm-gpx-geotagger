@@ -1,0 +1,27 @@
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+      - uses: cargo-bins/cargo-binstall@main
+      - run: cargo binstall dioxus-cli --no-confirm
+      - run: dx build --release --platform web
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: target/dx/geotagger/release/web/public/
+      - uses: actions/deploy-pages@v4
+        id: deployment
