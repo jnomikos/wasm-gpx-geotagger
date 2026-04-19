@@ -9,6 +9,20 @@ edition = "2021"
 [dependencies]
 dioxus = { version = "0.7.1", features = [] }
 gpx = "0.10.0"
+img-parts = "0.4.0"
+little_exif = "0.6.23"
+bytes = "1"
+js-sys = "0.3"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+web-sys = { version = "0.3", features = [
+    "Blob", "BlobPropertyBag", "Url",
+    "HtmlAnchorElement", "Document", "Element", "HtmlElement",
+    "FileSystemDirectoryHandle", "FileSystemFileHandle",
+    "FileSystemWritableFileStream", "FileSystemGetFileOptions",
+    "Window", "Performance",
+] }
+dioxus-leaflet = "0.3.1"
 
 [features]
 default = ["web"]

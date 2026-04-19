@@ -3,9 +3,14 @@
 use dioxus::prelude::*;
 
 use components::Hero;
+use components::SampleMap;
+
+use crate::tagging::GpxPoint;
 
 /// Define a components module that contains all shared components for our app.
 mod components;
+
+mod tagging;
 
 // We can import assets in dioxus with the `asset!` macro. This macro takes a path to an asset relative to the crate root.
 // The macro returns an `Asset` type that will display as the path to the asset in the browser or a local path in desktop bundles.
@@ -25,6 +30,7 @@ fn main() {
 /// Components should be annotated with `#[component]` to support props, better error messages, and autocomplete
 #[component]
 fn App() -> Element {
+    let mut gpx_points_signal = use_signal(|| None::<Vec<GpxPoint>>);
     // The `rsx!` macro lets us define HTML inside of rust. It expands to an Element with all of our HTML inside.
     rsx! {
         // In addition to element and text (which we will see later), rsx can contain other components. In this case,
@@ -32,8 +38,7 @@ fn App() -> Element {
         document::Link { rel: "icon", href: FAVICON }
         document::Link { rel: "stylesheet", href: MAIN_CSS }
 
-
-        Hero {}
-
+        Hero { gpx_points_signal: gpx_points_signal.clone() }
+        SampleMap { gpx_points_signal: gpx_points_signal.clone() }
     }
 }

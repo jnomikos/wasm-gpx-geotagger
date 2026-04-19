@@ -4,3 +4,6 @@
 
 mod hero;
 pub use hero::Hero;
+
+mod sample_map;
+pub use sample_map::SampleMap;
